@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="/styles/fa.all.min.css"/>
+    <link rel="stylesheet" href="/styles/bootstrap.sandstone.min.css"/>
+    <link rel="stylesheet" href="/styles/style.css"/>
+</head>
+<body>
+<div class="container p-4">
+    <nav class="mb-4">
+        <a
+            href="/catalog"
+            class="btn btn-sm btn-outline-dark mt-4"
+            role="button"
+        >Catalog</a>
+        {{#if req.auth}}
+            <a
+                    href="/reports"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Reports</a>
+            <a
+                    href="/borrowed-items"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Borrowed Items</a>
+            <a
+                    href="/types"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >My Types</a>
+            <a
+                    href="/items"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >My Items</a>
+            <a
+                    href="/users/profile"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Profile</a>
+            <a
+                    href="/users/logout"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Logout</a>
+        {{else}}
+            <a
+                    href="/users/register"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Registration</a>
+            <a
+                    href="/users/login"
+                    class="btn btn-sm btn-outline-dark mt-4"
+                    role="button"
+            >Login</a>
+        {{/if}}
+    </nav>
+    {{{body}}}
+    <footer class="mt-4">&copy; Jurij Cvikl</footer>
+</div>
+<script src="/javascript/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
+
+        <h2>{{title}}</h2>
+
+        {{#if message}}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/items/edit/{{id}}">
+            <div class="form-group">
+                <label for="type">Type <small class="text-danger">required</small></label>
+                <select name="type" class="form-control" id="type">
+                    {{#each types as |type|}}
+                        <option value="{{type._id}}"
+                                {{#if type.selected}}selected="selected"{{/if}}>{{type.title}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title <small class="text-danger">required</small></label>
+                <input name="title" type="text" class="form-control" id="title" value="{{form.title}}">
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author <small class="text-danger">required</small></label>
+                <input name="author" type="text" class="form-control" id="author" value="{{form.author}}">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description <small class="text-danger">required</small></label>
+                <input name="description" type="text" class="form-control" id="description"
+                       value="{{form.description}}">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status <small class="text-danger">required</small></label>
+                <select name="status" class="form-control" id="status">
+                    <option value="available" {{#if form.available}}selected="selected"{{/if}}>Available</option>
+                    <option value="borrowed" {{#if form.borrowed}}selected="selected"{{/if}}>Borrowed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="keywords">Keywords <small class="text-danger">required</small></label>
+                <input name="keywords" type="text" class="form-control" id="keywords"
+                       value="{{form.keywords}}">
+            </div>
+
+            <div class="pt-3">
+                <button type="submit" class="btn btn-primary">Save</button> <a href="/items" class="btn btn-link text-dark">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

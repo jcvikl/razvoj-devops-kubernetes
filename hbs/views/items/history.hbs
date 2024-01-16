@@ -1,0 +1,16 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-10">
+
+        <h2>{{title}}</h2>
+
+        <div>
+            {{#each histories as |history|}}
+                <div>
+                    <strong>{{history.date}}</strong>: <strong>{{history.name}}</strong> {{history.event}} item.
+                </div>
+            {{/each}}
+        </div>
+
+        <div><a href="/items" class="btn btn-link text-dark">Back</a></div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
+
+        <h2>{{title}}</h2>
+
+        {{#if message}}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/types/edit/{{id}}">
+            <div class="form-group">
+                <label for="title">Title <small class="text-danger">required</small></label>
+                <input name="title" type="text" class="form-control" id="title" value="{{form.title}}">
+            </div>
+
+            <div class="form-group">
+                <label for="borrowDays">Borrow Days <small class="text-danger">required</small></label>
+                <input name="borrowDays" type="text" class="form-control" id="borrowDays" value="{{form.borrowDays}}">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input name="description" type="text" class="form-control" id="description"
+                       value="{{form.description}}">
+            </div>
+
+            <div class="pt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/types" class="btn btn-link text-dark">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

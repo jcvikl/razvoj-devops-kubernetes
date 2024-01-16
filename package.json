@@ -1,0 +1,34 @@
+{
+  "name": "demo",
+  "description": "Demo application for Web Development course",
+  "author": "Jurij Cvikl <info@marcelino.si>",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "import:db:users": "docker cp ./data/Users.json web-dev-mongo-db:/Users.json; docker exec -it web-dev-mongo-db mongoimport --db Library --collection Users --drop --mode upsert --upsertFields id --jsonArray --file Users.json; docker exec -it web-dev-mongo-db rm -rf Users.json;",
+    "import:db:types": "docker cp ./data/Types.json web-dev-mongo-db:/Types.json; docker exec -it web-dev-mongo-db mongoimport --db Library --collection Types --drop --mode upsert --upsertFields id --jsonArray --file Types.json; docker exec -it web-dev-mongo-db rm -rf Types.json;",
+    "import:db:items": "docker cp ./data/Items.json web-dev-mongo-db:/Items.json; docker exec -it web-dev-mongo-db mongoimport --db Library --collection Items --drop --mode upsert --upsertFields id --jsonArray --file Items.json; docker exec -it web-dev-mongo-db rm -rf Items.json;",
+    "import:db-docker": "npm run import:db:users; npm run import:db:types; npm run import:db:items;",
+    "delete:db:users": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Users.deleteMany({})'\";",
+    "delete:db:types": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Types.deleteMany({})'\";",
+    "delete:db:items": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Items.deleteMany({})'\";",
+    "delete:db-docker": "npm run delete:db:users; npm run delete:db:types; npm run delete:db:items;"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "body-parser": "^1.20.2",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "~4.18.2",
+    "express-session": "^1.17.3",
+    "hbs": "~4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.5.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

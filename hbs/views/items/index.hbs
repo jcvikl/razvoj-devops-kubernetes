@@ -1,0 +1,59 @@
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <h2>{{title}}</h2>
+    <a href="/items/edit" class="btn btn-success">Add New</a>
+</div>
+
+<div class="row">
+    {{#if message}}
+        <div class="alert {{messageClass}}" role="alert">
+            {{message}}
+        </div>
+    {{/if}}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Type/Unique ID</td>
+            <td>Title/Author</td>
+            <td>Keywords</td>
+            <td class="text-center">Status</td>
+            <td>Borrowed By</td>
+            <td class="text-center"># Borrowed</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if isEmpty}}
+            <td colspan="7" class="text-center">You don't have any items yet!</td>
+        {{else}}
+            {{#each items as |item|}}
+                <tr>
+                    <td>{{item.itemType.title}}/{{item._id}}</td>
+                    <td>"{{item.title}}" by {{item.author}}<br><small>{{item.description}}</small></td>
+                    <td class="text-muted"><small>{{item.keywords}}</small></td>
+                    {{#if item.available}}
+                        <td class="text-center"><span class="badge bg-success">{{item.status}}</span></td>
+                    {{else}}
+                        <td class="text-center"><span class="badge bg-danger">{{item.status}}</span></td>
+                    {{/if}}
+                    <td>{{item.borrowedByName}}</td>
+                    <td class="text-center">{{item.counterBorrowed}}</td>
+                    <td class="text-end">
+                        {{#if item.available}}
+                            <a href="/items/borrow/{{item._id}}" class="btn btn-sm btn-danger mr-1 mb-1">Borrow</a>
+                        {{/if}}
+                        {{#if item.borrowed}}
+                            <a href="/items/return/{{item._id}}" class="btn btn-sm btn-success mr-1 mb-1"
+                               onclick="return confirm('Are you sure you want to return item?')">Return</a>
+                        {{/if}}
+                        <a href="/items/history/{{item._id}}" class="btn btn-sm btn-dark mr-1 mb-1">History</a>
+                        <a href="/items/edit/{{item._id}}" class="btn btn-sm btn-primary mr-1 mb-1">Edit</a>
+                        <a href="/items/delete/{{item._id}}" class="btn btn-sm btn-danger mb-1"
+                           onclick="return confirm('Do you want to delete item?')">Delete</a>
+                    </td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,37 @@
+<div class="pb-3">
+    <h2>{{title}}</h2>
+</div>
+
+<div class="row">
+    {{#if message}}
+        <div class="alert {{messageClass}}" role="alert">
+            {{message}}
+        </div>
+    {{/if}}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Type/ID</td>
+            <td>Title/Author</td>
+            <td>Owner</td>
+            <td>Return Until</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if isEmptyBorrowedItems}}
+            <td colspan="4" class="text-center">You don't have any borrowed items at the moment!</td>
+        {{else}}
+            {{#each borrowedItems as |borrowedItem|}}
+                <tr>
+                    <td><small class="text-muted">{{borrowedItem.itemType.title}}
+                        /{{borrowedItem._id}}</small></td>
+                    <td>"{{borrowedItem.title}}" by {{borrowedItem.author}}</td>
+                    <td>{{borrowedItem.owner.name}}</td>
+                    <td>{{borrowedItem.returnUntil}}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+</div>

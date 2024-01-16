@@ -1,0 +1,102 @@
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <h2>{{title}}</h2>
+</div>
+
+<div class="row">
+    {{#if message}}
+        <div class="alert {{messageClass}}" role="alert">
+            {{message}}
+        </div>
+    {{/if}}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th colspan="2">My Borrows</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Borrowed items (now)</td>
+            <td class="text-end">{{reports.myBorrows.borrowed}}</td>
+        </tr>
+        <tr>
+            <td>Borrowed items (lifetime)</td>
+            <td class="text-end">{{reports.myBorrows.lifetime}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>&nbsp;</div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th colspan="2">My Items</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>All items</td>
+            <td class="text-end">{{reports.myItems.all}}</td>
+        </tr>
+        <tr>
+            <td>Borrowed items (now)</td>
+            <td class="text-end">{{reports.myItems.borrowed}}</td>
+        </tr>
+        <tr>
+            <td>Available items (now)</td>
+            <td class="text-end">{{reports.myItems.available}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>&nbsp;</div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>My Types</th>
+            <th class="text-end"># of Items</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if isMyTypesEmpty}}
+            <tr>
+                <td colspan="2" class="text-center">You don't have any types yet!</td>
+            </tr>
+        {{else}}
+            {{#each reports.myTypes as |item|}}
+                <tr>
+                    <td>{{item.title}}</td>
+                    <td class="text-end">{{item.noOfItems}}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+
+    <div>&nbsp;</div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th colspan="2">My most borrowed items</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if isMyItemsEmpty}}
+            <tr>
+                <td colspan="2" class="text-center">You don't have any items yet!</td>
+            </tr>
+        {{else}}
+            {{#each reports.myMostBorrowedItems as |item|}}
+                <tr>
+                    <td>"{{item.title}}" by {{item.author}}</td>
+                    <td class="text-end">{{item.counterBorrowed}}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+</div>

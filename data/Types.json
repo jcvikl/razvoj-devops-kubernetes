@@ -1,0 +1,57 @@
+[
+  {
+    "_id": {"$oid": "65351fce0030f07133793d6a"},
+    "__v": 1,
+    "borrowDays": 14,
+    "createdOn": {"$date": "2023-10-22T13:12:46.405Z"},
+    "description": "",
+    "items": [{"$oid": "653522480030f07133793e1c"}],
+    "noOfItems": 1,
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "title": "CD"
+  },
+  {
+    "_id": {"$oid": "65351fd50030f07133793d76"},
+    "__v": 1,
+    "borrowDays": 90,
+    "createdOn": {"$date": "2023-10-22T13:12:53.858Z"},
+    "description": "",
+    "items": [{"$oid": "653521f70030f07133793df0"}],
+    "noOfItems": 1,
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "title": "Books"
+  },
+  {
+    "_id": {"$oid": "65351fea0030f07133793d82"},
+    "__v": 1,
+    "borrowDays": 21,
+    "createdOn": {"$date": "2023-10-22T13:13:14.481Z"},
+    "description": "",
+    "items": [{"$oid": "6535221b0030f07133793e06"}],
+    "noOfItems": 1,
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "title": "Movies"
+  },
+  {
+    "_id": {"$oid": "6535201c0030f07133793da2"},
+    "__v": 1,
+    "borrowDays": 21,
+    "createdOn": {"$date": "2023-10-22T13:14:04.725Z"},
+    "description": "",
+    "items": [{"$oid": "653521880030f07133793dc4"}],
+    "noOfItems": 1,
+    "owner": {"$oid": "653520080030f07133793d8b"},
+    "title": "Toys"
+  },
+  {
+    "_id": {"$oid": "653520220030f07133793dae"},
+    "__v": 1,
+    "borrowDays": 30,
+    "createdOn": {"$date": "2023-10-22T13:14:10.607Z"},
+    "description": "",
+    "items": [{"$oid": "6535219f0030f07133793dda"}],
+    "noOfItems": 1,
+    "owner": {"$oid": "653520080030f07133793d8b"},
+    "title": "Tools"
+  }
+]

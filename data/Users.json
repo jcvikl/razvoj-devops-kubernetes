@@ -1,0 +1,26 @@
+[
+  {
+    "_id": {"$oid": "65351f660030f07133793d52"},
+    "__v": 6,
+    "borrowedItems": [],
+    "email": "jurij@marcelino.si",
+    "hash": "4b20e8f4752bb94910de8e5ff8c4b4ea724a951a0a7b98c922f52ccbfbba3491bb88983127c9db0107f714ea8424445a0e8a7865b8360ee491fc5999b2e0aa34",
+    "itemTypes": [{"$oid": "65351fce0030f07133793d6a"}, {"$oid": "65351fd50030f07133793d76"}, {"$oid": "65351fea0030f07133793d82"}],
+    "items": [{"$oid": "653521f70030f07133793df0"}, {"$oid": "6535221b0030f07133793e06"}, {"$oid": "653522480030f07133793e1c"}],
+    "name": "Jurij Cvikl",
+    "noOfBorrowedItems": 0,
+    "salt": "8379a0e5f0339e536f55815b654fca8b"
+  },
+  {
+    "_id": {"$oid": "653520080030f07133793d8b"},
+    "__v": 4,
+    "borrowedItems": [],
+    "email": "some@user.com",
+    "hash": "bcd527e84ae08fa92c302573abb60ef23ae5bd48470264e7769ca181db89b7270f86494fc19cdfcdd0cf1bfecc5a047b81387dc529f1f8298da4c79b12024fe7",
+    "itemTypes": [{"$oid": "6535201c0030f07133793da2"}, {"$oid": "653520220030f07133793dae"}],
+    "items": [{"$oid": "653521880030f07133793dc4"}, {"$oid": "6535219f0030f07133793dda"}],
+    "name": "Some User",
+    "noOfBorrowedItems": 0,
+    "salt": "74acacfa069cb79cd003eca5fd7f165d"
+  }
+]

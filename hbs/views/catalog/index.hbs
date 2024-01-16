@@ -1,0 +1,58 @@
+<div class="pb-3">
+    <h2>{{title}}</h2>
+    <div>
+        <form action="/catalog" method="get" class="d-flex flex-row justify-content-start">
+            <input type="text" name="q" value="{{q}}" placeholder="Search by Type, Title, Author, Keywords"
+                   class="form-control">
+
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    {{#if message}}
+        <div class="alert {{messageClass}}" role="alert">
+            {{message}}
+        </div>
+    {{/if}}
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Title/Author/Description</td>
+            <td>Owner</td>
+            <td>Keywords</td>
+            <td class="text-center">Status</td>
+            <td class="text-center">Available for</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if isEmpty}}
+            <td colspan="6" class="text-center">There is no items in catalog yet!</td>
+        {{else}}
+            {{#each catalog as |entry|}}
+                <tr>
+                    <td><small class="text-muted">{{entry.itemType.title}}
+                        /{{entry._id}}</small><br><br>"{{entry.title}}"
+                        by {{entry.author}}<br><small>{{entry.description}}</small></td>
+                    <td>{{entry.owner.name}}</td>
+                    <td class="text-muted"><small>{{entry.keywords}}</small></td>
+                    {{#if entry.available}}
+                        <td class="text-center"><span class="badge bg-success">{{entry.status}}</span></td>
+                    {{else}}
+                        <td class="text-center"><span class="badge bg-danger">{{entry.status}}</span></td>
+                    {{/if}}
+                    <td class="text-center">{{entry.itemType.borrowDays}} days</td>
+                    <td class="text-end">
+                        {{#if entry.available}}
+                            <a href="/catalog/borrow/{{entry._id}}" class="btn btn-sm btn-danger mr-1">Borrow</a>
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        </tbody>
+    </table>
+</div>

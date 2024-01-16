@@ -1,0 +1,29 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
+
+        <h2>{{title}}</h2>
+
+        {{#if message}}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/catalog/borrow/{{id}}">
+            <div class="form-group">
+                <label for="name">Name <small class="text-danger">required</small></label>
+                <input name="name" type="text" class="form-control" id="name" value="{{form.name}}">
+            </div>
+
+            <div class="form-group">
+                <label for="returnDate">Return date</label>
+                <input name="returnDate" type="text" class="form-control" id="returnDate" value="{{form.returnDate}}" disabled>
+            </div>
+
+            <div class="pt-3">
+                <button type="submit" class="btn btn-primary" onclick="return confirm('Do you want to borrow this item?')">Borrow</button>
+                <a href="/catalog" class="btn btn-link text-dark">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

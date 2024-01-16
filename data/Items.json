@@ -1,0 +1,67 @@
+[
+  {
+    "_id": {"$oid": "653521880030f07133793dc4"},
+    "__v": 0,
+    "author": "Matel",
+    "counterBorrowed": 0,
+    "description": "Nice small white teddy bear",
+    "histories": [],
+    "itemType": {"$oid": "6535201c0030f07133793da2"},
+    "keywords": "teddy bear, matel",
+    "owner": {"$oid": "653520080030f07133793d8b"},
+    "status": "available",
+    "title": "Teddy Bear"
+  },
+  {
+    "_id": {"$oid": "6535219f0030f07133793dda"},
+    "__v": 0,
+    "author": "Makita",
+    "counterBorrowed": 0,
+    "description": "Powerful drilling machine",
+    "histories": [],
+    "itemType": {"$oid": "653520220030f07133793dae"},
+    "keywords": "makita, drilling machine",
+    "owner": {"$oid": "653520080030f07133793d8b"},
+    "status": "available",
+    "title": "Drilling machine"
+  },
+  {
+    "_id": {"$oid": "653521f70030f07133793df0"},
+    "__v": 0,
+    "author": "Kajetan Kovič",
+    "counterBorrowed": 0,
+    "description": "Moj prijatelj Piki Jakob je otroško delo, ki ga je spisal Kajetan Kovič",
+    "histories": [],
+    "itemType": {"$oid": "65351fd50030f07133793d76"},
+    "keywords": "piki jakob, kajetan kovic",
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "status": "available",
+    "title": "Piki Jakob"
+  },
+  {
+    "_id": {"$oid": "6535221b0030f07133793e06"},
+    "__v": 0,
+    "author": "Francis Ford Coppola",
+    "counterBorrowed": 0,
+    "description": "The Godfather is a trilogy of American crime films directed by Francis Ford Coppola inspired by the 1969 novel of the same name by Italian American author Mario Puzo.",
+    "histories": [],
+    "itemType": {"$oid": "65351fea0030f07133793d82"},
+    "keywords": "mafia, al pacino",
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "status": "available",
+    "title": "Godfather"
+  },
+  {
+    "_id": {"$oid": "653522480030f07133793e1c"},
+    "__v": 0,
+    "author": "Pink",
+    "counterBorrowed": 0,
+    "description": "Can't Take Me Home is the debut studio album by American singer and songwriter Pink.",
+    "histories": [],
+    "itemType": {"$oid": "65351fce0030f07133793d6a"},
+    "keywords": "pink",
+    "owner": {"$oid": "65351f660030f07133793d52"},
+    "status": "available",
+    "title": "Can't Take Me Home"
+  }
+]

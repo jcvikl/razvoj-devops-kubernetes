@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+  web-dev-node-api:
+    container_name: web-dev-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - "3000:3000"
+    links:
+      - web-dev-mongo-db
+    depends_on:
+      - web-dev-mongo-db
+    networks:
+      - web-dev-network
+  web-dev-mongo-db:
+    container_name: web-dev-mongo-db
+    image: mongo
+    restart: always
+    ports:
+      - "27017-27019:27017-27019"
+    networks:
+      - web-dev-network
+networks:
+  web-dev-network:
+    driver: bridge
