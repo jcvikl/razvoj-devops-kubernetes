@@ -29,7 +29,7 @@ Aplikacija naj bo napisana tako, da bo omogočala tudi izposojo drugih reči (np
 
 # How to use app
 1. run `cp .env.example .env` to create config file
-2. run `docker-composer up`
+2. run `docker-compose up`
 3. open `http://localhost:3000` in browser
 4. in order to fill test data, run `npm run import:db-docker`
 
