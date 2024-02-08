@@ -13,7 +13,8 @@
     "delete:db:users": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Users.deleteMany({})'\";",
     "delete:db:types": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Types.deleteMany({})'\";",
     "delete:db:items": "docker exec -it web-dev-mongo-db bash -c \"mongosh Library --eval 'db.Items.deleteMany({})'\";",
-    "delete:db-docker": "npm run delete:db:users; npm run delete:db:types; npm run delete:db:items;"
+    "delete:db-docker": "npm run delete:db:users; npm run delete:db:types; npm run delete:db:items;",
+    "build": "docker build -t my-app:latest ."
   },
   "dependencies": {
     "axios": "^1.5.1",
