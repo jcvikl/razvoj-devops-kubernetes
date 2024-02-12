@@ -39,6 +39,8 @@ Aplikacija naj bo napisana tako, da bo omogočala tudi izposojo drugih reči (np
 
 # Deployment to Kubernetes (DigitalOcean)
 
+Production: https://my-app.77777771.xyz/
+
 We are deploying a Kubernetes cluster with two nodes for the database and application.
 Configuring the cluster to use Ingress, Cert Manager and Letsencrypt Issuers
 
